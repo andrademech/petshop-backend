@@ -4,6 +4,10 @@ execute o comando abaixo para instalar as dependências do projeto:
 
 npm install
 
+Crie um arquivo .env na raiz do projeto e adicione as variáveis de ambiente:
+
+DATABASE_URL="postgresql://postgres:admin@localhost:5432/petshopDB?schema=public"
+
 execute o comando abaixo para iniciar a aplicação:
 
 npm run dev
