@@ -1,6 +1,7 @@
 import fastify from "fastify";
 import { PrismaClient } from "@prisma/client";
 import cors from "@fastify/cors";
+import { send } from "process";
 
 const prisma = new PrismaClient();
 
@@ -59,6 +60,15 @@ app.get("/pets", async (request, reply) => {
     .send({
       message: "All pets",
       data: allPets,
+    })
+});
+
+// Welcome route
+app.get("/", async (request, reply) => {
+  return reply
+    .code(200)
+    .send({
+      message: "Welcome to the Pet API",
     })
 });
 
@@ -139,4 +149,4 @@ app
   })
   .then(() => {
     console.log(`"Server started on port 3000"`);
-  });
+  })
