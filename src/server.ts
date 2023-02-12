@@ -141,7 +141,7 @@ app.delete("/pets/:id", async (request, reply) => {
     })
 });
 
-const port = 3000 || process.env.PORT;
+const port = 3000 || "https://petshop-backend-kappa.vercel.app/";
 
 app
   .listen({
