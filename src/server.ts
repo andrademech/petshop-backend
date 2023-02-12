@@ -1,7 +1,6 @@
 import fastify from "fastify";
 import { PrismaClient } from "@prisma/client";
 import cors from "@fastify/cors";
-import { send } from "process";
 
 const prisma = new PrismaClient();
 
@@ -142,10 +141,11 @@ app.delete("/pets/:id", async (request, reply) => {
     })
 });
 
+const port = 3000 || process.env.PORT;
 
 app
   .listen({
-    port: 3000,
+    port: port,
   })
   .then(() => {
     console.log(`"Server started on port 3000"`);
